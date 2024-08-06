@@ -24,7 +24,7 @@ def emotion_detector(text_to_analyze):
     if emotion_predictions:
         predictions = emotion_predictions[0]['emotion']
         emotions = {key: predictions.get(key,None) for key in predictions }
-        emotions['dominant emotion'] = max(predictions, key=predictions.get)
+        emotions['dominant_emotion'] = max(predictions, key=predictions.get)
     else:
         emotions = {'anger': None, 'disgust': None, 'fear': None, 'joy': None, 'sadness': None, 'dominant_emotion': None}
     return emotions
